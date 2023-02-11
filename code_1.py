@@ -5,3 +5,4 @@ again
 saturday
 sunday
 monday
+Tuesday
