@@ -5,5 +5,3 @@ sunday
 
 mon
 
-sun
-
