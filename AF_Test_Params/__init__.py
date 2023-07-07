@@ -4,7 +4,8 @@ import azure.functions as func
 
 # this script proves the req.params is used to receive values from the url
 # 1. click the url to jump to the webpage
-# 2. give the name and gender at the end of url, and press enter
+# 2. copy/paste the line below at the end of url, and press enter
+#    ?name=peli&gender={"age":"18"}
 # 3. then, name and gender are retrieved from req.params
 
 # next we need to test get and post method in the portal
