@@ -7,6 +7,8 @@ import azure.functions as func
 # 2. copy/paste the line below at the end of url, and press enter
 #    ?name=peli&gender={"age":"18"}
 # 3. then, name and gender are retrieved from req.params
+# this is the result that shows on the webpage
+# Hello, peli.                                     req.params is {'gender': '{"age":"18"}', 'name': 'peli'} and                                     type_params is <class 'mappingproxy'> and                                     gender is {"age":"18"} and                                     lst is ['copy', 'get', 'items', 'keys', 'values']
 
 # next we need to test get and post method in the portal
 
