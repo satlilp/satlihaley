@@ -11,6 +11,8 @@ import azure.functions as func
 # Hello, peli.                                     req.params is {'gender': '{"age":"18"}', 'name': 'peli'} and                                     type_params is <class 'mappingproxy'> and                                     gender is {"age":"18"} and                                     lst is ['copy', 'get', 'items', 'keys', 'values']
 
 # next we need to test get and post method in the portal
+# currently we're sure that the req.params takes values from the url, but for req.get_json,
+# need to use either portal or postman to test
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
