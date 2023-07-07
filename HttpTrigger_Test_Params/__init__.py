@@ -16,9 +16,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     gender = req.params.get('gender')
 
-    res = req.params
-
-    type_params = type(req.params)
+    # comment out res and type_params since req.params is directly used in func.HttpResponse
+    # res = req.params
+    # type_params = type(req.params)
     
     if not name:
         print("name is ", name)
