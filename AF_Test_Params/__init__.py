@@ -18,8 +18,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     gender = req.params.get('gender')
 
     # comment out res and type_params since req.params is directly used in func.HttpResponse
-    # res = req.params
-    # type_params = type(req.params)
+    res = req.params
+    type_params = type(req.params)
     
     if not name:
         print("name is ", name)
@@ -43,9 +43,14 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             if not c.startswith("_"):
                 lst.append(c)
         # use req.params.get directly here inside the curly bracket
-        return func.HttpResponse(f"Hello, {req.params.get('name')}. req.params is {req.params} and type_params is {type_params} and gender is {gender} and lst is {lst}")
+        return func.HttpResponse(f"Hello, {req.params.get('name')}. \
+                                    req.params is {req.params} and \
+                                    type_params is {type(req.params)} and \
+                                    gender is {gender} and \
+                                    lst is {lst}")
     else:
         return func.HttpResponse(
-             "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
+             "This HTTP triggered function executed successfully. \
+              Pass a name in the query string or in the request body for a personalized response.",
              status_code=200
         )
