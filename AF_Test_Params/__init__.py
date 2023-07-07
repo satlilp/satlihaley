@@ -15,7 +15,7 @@ import azure.functions as func
 # need to use either portal or postman to test
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
-    logging.info('Python HTTP trigger function processed a request.')
+    # logging.info('Python HTTP trigger function processed a request.')
 
     name = req.params.get('name')
 
@@ -26,21 +26,25 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     type_params = type(req.params)
     
     if not name:
-        print("name is ", name)
+        print("name is", name)
         try:
             print("1")
             req_body = req.get_json()
-            print(req_body)
+            # req_body = req.get_body()
+            print("req_body is", req_body)
+            print("req_body type is", type(req_body))
+            print('"req_body["name"] is"', req_body["name"])
             print("2")
         except ValueError:
             print("3")
             pass
         else:
             print("4")
-            name = req_body.get('name')
+            # name = req_body.get('name')
             print("5")
 
     if name:
+        print("6")
         # lst will give all the functions available under req.params
         lst = []
         for c in dir(req.params):
@@ -54,7 +58,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
                                     lst is {lst}")
     else:
         return func.HttpResponse(
-             "This HTTP triggered function executed successfully. \
+             f" {req_body} No name found \
+              This HTTP triggered function executed successfully. \
               Pass a name in the query string or in the request body for a personalized response.",
              status_code=200
         )
