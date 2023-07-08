@@ -1,5 +1,5 @@
 import logging
-
+import json
 import azure.functions as func
 
 # this script proves the req.params is used to receive values from the url
@@ -22,6 +22,13 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     name = req.params.get('name')
 
     gender = req.params.get('gender')
+
+    print("--------------------")
+    print(req.get_body(), "/", type(req.get_body()))
+    print(req.get_body().decode("utf-8"), "/", type(req.get_body().decode("utf-8")))
+    print(json.loads(req.get_body().decode("utf-8")), "/", type(json.loads(req.get_body().decode("utf-8"))))
+
+
 
     # comment out res and type_params since req.params is directly used in func.HttpResponse
     res = req.params
