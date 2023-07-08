@@ -14,6 +14,8 @@ import azure.functions as func
 # currently we're sure that the req.params takes values from the url, but for req.get_json,
 # need to use either portal or postman to test
 
+# obj.get_body().decode('utf-8')
+
 def main(req: func.HttpRequest) -> func.HttpResponse:
     # logging.info('Python HTTP trigger function processed a request.')
 
@@ -34,6 +36,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             print("req_body is", req_body)
             print("req_body type is", type(req_body))
             print('"req_body["name"] is"', req_body["name"])
+            print("dir(req.get_json()) is", dir(req.get_json()))
             print("2")
         except ValueError:
             print("3")
