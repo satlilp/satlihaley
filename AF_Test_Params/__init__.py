@@ -16,6 +16,7 @@ import azure.functions as func
 
 # obj.get_body().decode('utf-8')
 
+# from remote
 def main(req: func.HttpRequest) -> func.HttpResponse:
     # logging.info('Python HTTP trigger function processed a request.')
 
@@ -28,7 +29,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     print(req.get_body().decode("utf-8"), "/", type(req.get_body().decode("utf-8")))
     print(json.loads(req.get_body().decode("utf-8")), "/", type(json.loads(req.get_body().decode("utf-8"))))
 
-
+# from remote
+    # from remote
+# from remote
 
     # comment out res and type_params since req.params is directly used in func.HttpResponse
     res = req.params
@@ -48,11 +51,12 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         except ValueError:
             print("3")
             pass
+        # from remote
         else:
             print("4")
             # name = req_body.get('name')
             print("5")
-
+# from remote
     if name:
         print("6")
         # lst will give all the functions available under req.params
@@ -73,3 +77,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
               Pass a name in the query string or in the request body for a personalized response.",
              status_code=200
         )
+# from remote
+# from remote
+# from remote
