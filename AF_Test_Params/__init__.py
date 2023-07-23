@@ -16,10 +16,14 @@ import azure.functions as func
 
 # obj.get_body().decode('utf-8')
 
+# from local
+
 def main(req: func.HttpRequest) -> func.HttpResponse:
     # logging.info('Python HTTP trigger function processed a request.')
 
     name = req.params.get('name')
+
+# from local
 
     gender = req.params.get('gender')
 
@@ -29,6 +33,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     print(json.loads(req.get_body().decode("utf-8")), "/", type(json.loads(req.get_body().decode("utf-8"))))
 
 
+# from local
 
     # comment out res and type_params since req.params is directly used in func.HttpResponse
     res = req.params
@@ -49,9 +54,13 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             print("3")
             pass
         else:
+            # from local
+
             print("4")
             # name = req_body.get('name')
             print("5")
+# from local
+# from local
 
     if name:
         print("6")
@@ -66,6 +75,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
                                     type_params is {type(req.params)} and \
                                     gender is {gender} and \
                                     lst is {lst}")
+    # from local
+
     else:
         return func.HttpResponse(
              f" {req_body} No name found \
@@ -73,3 +84,10 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
               Pass a name in the query string or in the request body for a personalized response.",
              status_code=200
         )
+# from local
+
+
+
+
+
+# from local
